@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 export default function Main() {
+    const [memeObject, setMemeObject] = useState({
+        topText: "One does not simply",
+        bottomText: "Walk into Mordor",
+        imageURL: "http://i.imgflip.com/1bij.jpg"
+    });
+
     return (
         <main>
             <div className="form">
@@ -19,9 +27,9 @@ export default function Main() {
                 <button>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src="http://i.imgflip.com/1bij.jpg" />
-                <span className="top">One does not simply</span>
-                <span className="bottom">Walk into Mordor</span>
+                <img src={memeObject.imageURL} />
+                <span className="top">{memeObject.topText}</span>
+                <span className="bottom">{memeObject.bottomText}</span>
             </div>
         </main>
     );
